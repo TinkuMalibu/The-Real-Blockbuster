@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'rentals/index'
+  get 'rentals/new'
+  get 'rentals/show'
+  get 'rentals/edit'
   get 'movies/index'
   get 'movies/new'
   get 'movies/show'
