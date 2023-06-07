@@ -1,2 +1,14 @@
 <h1>Movies#new</h1>
 <p>Find me in app/views/movies/new.html.erb</p>
+<div class="container w-50 shadow bg-white mt-5 p-3">
+  <%= simple_form_for @movie do |f|%>
+    <%= f.input :title %>
+    <%= f.input :price %>
+    <%= f.input :director %>
+    <%= f.input :synopsis %>
+    <%= f.input :year %>
+    <%= f.input :genre %>
+    <%= f.input :poster_url, class:'form-control' %>
+    <%= f.submit 'Create', class:'btn btn-primary mb-4 ' %> <%= link_to 'Back', movies_path, class:"btn btn-warning mb-4" %>
+  <% end %>
+</div>
