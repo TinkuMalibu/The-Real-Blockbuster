@@ -1,10 +1,10 @@
-<h1>Rentals#new</h1>
+<h1>this is rentals#new</h1>
 <p>Find me in app/views/rentals/new.html.erb</p>
 
 <div class="container w-50 shadow bg-white mt-5 p-3">
   <%= simple_form_for [@movie, @rental] do |f| %>
     <%= @movie.title %>
-    <%= f.input :date %>
+    <%= f.input :rent_date %>
     <%= f.input :return_date %>
     <%# <%= f.association :f.title %>
     <%= f.submit class:'btn btn-primary mb-4 ' %> <%= link_to 'Back', movie_path(@movie), class:"btn btn-warning mb-4" %>
