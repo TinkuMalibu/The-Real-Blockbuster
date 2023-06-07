@@ -1,5 +1,8 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+
+<div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @movie.poster_url%>)">
+    <h1><%= @movie.title %></h1>
+</div>
+
 <div class="banner-show" style=''>
   <div class="container">
     <h1>
@@ -17,6 +20,7 @@
   </div>
   </div>
 </div>
+
 
 
 <%# background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @movie.image_url %>
