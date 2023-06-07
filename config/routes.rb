@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'rentals/index'
-  get 'rentals/new'
-  get 'rentals/show'
-  get 'rentals/edit'
-  get 'movies/index'
-  get 'movies/new'
-  get 'movies/show'
-  get 'movies/edit'
   devise_for :users
   root to: "pages#home"
+
+  resources :movies do
+    resources :rentals, only: %i[new create]
+  end
+  resources :rentals, except: %i[show create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
