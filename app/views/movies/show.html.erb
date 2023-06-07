@@ -1,2 +1,22 @@
 <h1>Movies#show</h1>
 <p>Find me in app/views/movies/show.html.erb</p>
+<div class="banner-show" style=''>
+  <div class="container">
+    <h1>
+      <%= @movie.title.capitalize%>
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <div class="text-start mt-4">
+    <h4><%= @movie.price %></h4>
+    <h4><%= @movie.director %></h4>
+    <h4><%= @movie.genre %></h4>
+    <h4><%= @movie.year %></h4>
+    <h4><%= @movie.synopsis %></h4>
+  </div>
+  </div>
+</div>
+
+
+<%# background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @movie.image_url %>
