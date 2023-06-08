@@ -1,10 +1,10 @@
-<div class="container shadow mt-5 p-3 w-50">
-<h2>Sign up</h2>
+<div class="container mt-5 p-3 w-50">
+<h5>Sign up</h5>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-control" style="width: 300px" placeholder="Smaller input">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -19,9 +19,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up"%>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
 </div>
