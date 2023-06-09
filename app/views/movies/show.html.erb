@@ -1,26 +1,21 @@
-
-<div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @movie.poster_url%>)">
-    <h1><%= @movie.title %></h1>
-</div>
-
-<div class="banner-show" style=''>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @movie.poster_url%>);">
   <div class="container">
-    <h1>
-      <%= @movie.title.capitalize%>
-    </h1>
+    <div class="row">
+      <div class="col-4">
+        <h1><%= @movie.title %></h1>
+        <h1><%= @movie.price %></h4>
+        <h1><%= @movie.director %></h4>
+      </div>
+      <div class="col-4">
+        <h1><%= @movie.genre %></h4>
+        <h1><%= @movie.year %></h4>
+      </div>
+      <div class="col-4">
+        <h1><%= @movie.synopsis %></h4>
+        <%= link_to "Alquilar", new_movie_rental_path(@movie), class:"btn btn-primary"%>
+      </div>
+    </div>
   </div>
-</div>
-<div class="container">
-  <div class="text-start mt-4">
-    <h4><%= @movie.price %></h4>
-    <h4><%= @movie.director %></h4>
-    <h4><%= @movie.genre %></h4>
-    <h4><%= @movie.year %></h4>
-    <h4><%= @movie.synopsis %></h4>
-  </div>
-  <%= link_to "Alquilar", new_movie_rental_path(@movie), class:"btn btn-primary"%>
-  </div>
-
 </div>
 
 
