@@ -1,2 +1,12 @@
 <h1>Rentals#show</h1>
 <p>Find me in app/views/rentals/show.html.erb</p>
+
+
+<div class="container">
+  <%= @rental.movie.title %>
+   <%= @rental.rent_date %>
+   <%= @rental.return_date %>
+</div>
+
+<%= link_to 'My rentals', user_path(current_user) %>
+<%= link_to 'continue renting', movies_path %>
