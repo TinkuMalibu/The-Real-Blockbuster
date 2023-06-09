@@ -18,7 +18,8 @@
     <h4><%= @movie.year %></h4>
     <h4><%= @movie.synopsis %></h4>
   </div>
-  <%= link_to "Alquilar", new_movie_rental_path(@movie), class:"btn btn-primary"%>
+  <%= link_to "Rent this movie", new_movie_rental_path(@movie), class:"btn btn-primary"%>
+  <%= link_to "Back to movies", movies_path, class:"btn btn-primary"%>
   </div>
 
 </div>
