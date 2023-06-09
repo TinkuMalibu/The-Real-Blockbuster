@@ -12,15 +12,16 @@ class RentalsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @rental = Rental.new(params_rental)
     @rental.movie = @movie
+    @rental.user = current_user
     if @rental.save
-      redirect_to movie_path(@movie)
+      redirect_to rental_path(@rental)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    @rental = Rental.new
+    @rental = Rental.find(params[:id])
   end
 
   def edit
@@ -29,6 +30,6 @@ class RentalsController < ApplicationController
   private
 
   def params_rental
-    params.require(:rental).permit( :return_date, :rent_date)
+    params.require(:rental).permit(:return_date, :rent_date)
   end
 end

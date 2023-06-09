@@ -1,0 +1,6 @@
+<h1>My profile</h1>
+
+
+<% @user.rentals.each do |r| %>
+<%= r.movie.title %>
+<% end %>
