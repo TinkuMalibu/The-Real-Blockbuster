@@ -1,6 +1,8 @@
 <h1>My profile</h1>
 
 
-<% @user.rentals.each do |r| %>
-<%= r.movie.title %>
+<% @user.rentals.each do |rental| %>
+<%= rental.movie.title %>
+<%= rental.rent_date %>
+<%= rental.return_date %>
 <% end %>
