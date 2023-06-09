@@ -11,7 +11,9 @@ puts "destroy record"
 # User.destroy_all
 
 puts "creando primer usuario"
-User.create(first_name: "Aaron", last_name: "Deik", phone_number: "1231331", address: "sfsafsf", email: "aaron@gmail.com",encrypted_password: "123456")
+usuario = User.create(first_name: "Aaron", last_name: "Deik", phone_number: "1231331", address: "sfsafsf", email: "aaron@gmail.com",encrypted_password: "123456")
+usuario.save
+puts(usuario.first_name)
 puts "creando primera pelicula"
 Movie.create(user_id: 1, title: "Harry Potter", price: 3000, genre: "Fantastico", synopsis: "Hay poderes", poster_url: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2021/01/harry-potter-1.jpg?fit=2500%2C1576&quality=50&strip=all&ssl=1", director: "Rowling",year: 2010)
 
