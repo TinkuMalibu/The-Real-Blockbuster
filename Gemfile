@@ -81,3 +81,5 @@ end
 # gemas del proyecto
 
 gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
