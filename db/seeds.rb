@@ -14,6 +14,6 @@ puts "creando primer usuario"
 usuario = User.create(first_name: "Aaron", last_name: "Deik", phone_number: "1231331", address: "sfsafsf", email: "aaron@gmail.com", password: "aaron1234")
 puts(usuario.first_name)
 puts "creando primera pelicula"
-pelicula = Movie.create(user_id: 5, title: "Harry Potter", price: 3000, genre: "Fantastico", synopsis: "Hay poderes", poster_url: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2021/01/harry-potter-1.jpg?fit=2500%2C1576&quality=50&strip=all&ssl=1", director: "Rowling",year: 2010)
+Movie.create(user_id: 2, title: "Harry Potter", price: 3000, genre: "Fantastico", synopsis: "Hay poderes", poster_url: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2021/01/harry-potter-1.jpg?fit=2500%2C1576&quality=50&strip=all&ssl=1", director: "Rowling",year: 2010)
 
 # Rental.new(user_id: 1, movie_id: 2, date: '01-01-2020', return_date: '07-01-2020')
