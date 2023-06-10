@@ -10,4 +10,10 @@
     <%# <%= f.association :f.title %>
     <%= f.submit class:'btn btn-primary mb-4'%> <%= link_to 'Back', movie_path(@movie), class:"btn btn-warning mb-4" %>
   <% end %>
+  <% if @rental.errors.any? %>
+    <small class="text-danger">
+      <%= @rental.errors.messages[:base].first %>
+    </small>
+  <% end %>
+
 </div>

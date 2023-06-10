@@ -5,7 +5,6 @@ Rental.destroy_all
 
 puts "creando primer usuario"
 usuario = User.create!(first_name: "Aaron", last_name: "Deik", phone_number: "1341234", address: "sfsafsf", email: "aaron@gmail.com", password: "123456")
-
 puts "creando segundo usuario"
 usuario2 = User.create!(first_name: "Matias", last_name: "Avaca", phone_number: "123331", address: "sfsafsf", email: "matias@gmail.com", password: "123456")
 
