@@ -8,7 +8,7 @@
     <%= f.input :synopsis %>
     <%= f.input :year %>
     <%= f.input :genre %>
-    <%= f.input :poster_url, class:'form-control' %>
+    <%= f.input :poster_url, as: :file, class:'form-control' %>
     <%= f.submit 'Create', class:'btn btn-primary mb-4 ' %> <%= link_to 'Back', movies_path, class:"btn btn-warning mb-4" %>
   <% end %>
 </div>
