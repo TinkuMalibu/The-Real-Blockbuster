@@ -1,7 +1,24 @@
 <h1>My profile</h1>
+<%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
 
 <% @user.rentals.each do |rental| %>
-  <%= rental.movie.title %>
-  <%= rental.rent_date %>
-  <%= rental.return_date %>
-<% end %>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="<%= rental.movie.poster_url %>" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= rental.movie.title %></h5>
+        <p class="card-text">Cost: $<%= rental.movie.price %></p>
+        <p class="card-text">From:<%= rental.rent_date %></p>
+        <p class="card-text">To:<%= rental.return_date %></p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+  <% end %>
+
+
+<%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
