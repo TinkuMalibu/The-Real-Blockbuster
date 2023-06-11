@@ -7,4 +7,6 @@ class Movie < ApplicationRecord
   validates :price, :synopsis, :poster_url, :director, :title, :year, presence: true
   validates :genre, inclusion: {in: GENRES }
   has_one_attached :poster_url
+
+  has_many :users, through: :rentals
 end
