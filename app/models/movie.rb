@@ -6,5 +6,6 @@ class Movie < ApplicationRecord
   has_many :rentals, dependent: :destroy
   validates :price, :synopsis, :poster_url, :director, :title, :year, presence: true
   validates :genre, inclusion: {in: GENRES }
+
   has_one_attached :poster_url
 end
