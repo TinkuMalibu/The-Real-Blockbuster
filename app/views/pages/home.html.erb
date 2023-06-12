@@ -1,8 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'thenever.jpg' %>);">
-  <div class="container">
-    <h1>TheRealBlockBuster</h1>
-    <p>Rebobinando recuerdos con cada VHS.</p>
-    <%= link_to "ENTER", movies_path, class:"btn btn-primary" %>
 
-  </div>
+<div class="banner" class="video-container" style="background-video: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+
+<video autoplay loop playinline preload="auto" muted width="100%" height="90%" controls>
+  <source src="<%= asset_path('elresplandor.mp4') %>" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 </div>
+  <div class="text-overlay">
+    <h1>Rewinding memories with every VHS</h1>
+    <%= link_to "ENTER", movies_path, class:"btn btn-primary" %>
+  </div>
