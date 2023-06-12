@@ -14,6 +14,7 @@ class RentalsController < ApplicationController
     @rental.movie = @movie
     @rental.user = current_user
     if @rental.save
+      @rental.movie.update(available: false)
       redirect_to rental_path(@rental)
     else
       render :new, status: :unprocessable_entity
@@ -30,6 +31,6 @@ class RentalsController < ApplicationController
   private
 
   def params_rental
-    params.require(:rental).permit(:return_date, :rent_date)
+    params.require(:rental).permit(:return_date, :rent_date, :user_id, :movie_id)
   end
 end

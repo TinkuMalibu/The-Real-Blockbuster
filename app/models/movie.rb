@@ -8,4 +8,6 @@ class Movie < ApplicationRecord
   validates :genre, inclusion: {in: GENRES }
 
   has_one_attached :poster_url
+
+  has_many :users, through: :rentals
 end
