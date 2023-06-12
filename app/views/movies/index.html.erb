@@ -19,17 +19,43 @@
       <% end %>
     </div>
   </div>
+
   <div class="row">
     <% if @movies.any? %>
       <% @movies.each do |movie| %>
         <div class="col-12 col-sm-6 col-md-4 mb-3">
-          <%= link_to movie_path(movie), class:"text-decoration-none" do %>
-            <% if movie.poster_url.attached? %>
-              <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path movie.poster_url.key %>)">
-            <% else %>
-              <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
+          <% if movie.available %>
+            <%= link_to movie_path(movie), class:"text-decoration-none" do %>
+              <% if movie.poster_url.attached? %>
+                <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path movie.poster_url.key %>)">
+              <% else %>
+                <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
+              <% end %>
+                <div class="d-flex flex-column h-100 text-white">
+                  <div class="align-self-center m-auto">
+                    <h2 class=""><%= movie.title%></h2>
+                  </div>
+                  <div class="align-self-center">
+                    <h3 class=""><%= movie.year %></h3>
+                  </div>
+                </div>
+                <div class="avatar-container position-absolute bottom-0 end-0">
+                  <% if movie.user && movie.user.avatar.attached?%>
+                    <%= image_tag movie.user.avatar, class:"avatar" %>
+                  <% else %>
+                    <%= image_tag "sinimagen.jpg", class:"avatar" %>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
-              <div class="d-flex flex-column h-100 text-white">
+          <% else %>
+            <div class="text-decoration-none" style="pointer-events: none; opacity: 0.5;">
+              <% if movie.poster_url.attached? %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path movie.poster_url.key %>)">
+              <% else %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
+              <% end %>
+              <div class="d-flex flex-column h-100">
                 <div class="align-self-center m-auto">
                   <h2 class=""><%= movie.title%></h2>
                 </div>
@@ -37,14 +63,8 @@
                   <h3 class=""><%= movie.year %></h3>
                 </div>
               </div>
-            <div class="avatar-container position-absolute bottom-0 end-0">
-              <% if movie.user && movie.user.avatar.attached?%>
-                  <%= image_tag movie.user.avatar, class:"avatar" %>
-              <% else %>
-                <%= image_tag "sinimagen.jpg", class:"avatar" %>
-              <% end %>
             </div>
-            </div>
+          </div>
           <% end %>
         </div>
       <% end %>
