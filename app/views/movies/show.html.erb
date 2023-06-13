@@ -1,18 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @movie.poster_url.key %>);">
   <div class="container">
     <div class="row">
-      <div class="col-4">
+      <div class="font-color" class="col-6">
         <h2><%= @movie.title %></h2>
-        <h6><%= @movie.director %></h6>
-        <h6><%= @movie.price %></h6>
-      </div>
-      <div class="col-4">
-        <h6><%= @movie.genre %></h6>
-        <h6><%= @movie.year %></h6>
-      </div>
-      <div class="col-4">
+        <p>Directed by  <%= @movie.director %></p>
+        <p>Genre: <%= @movie.genre %></p>
+        <p>Year: <%= @movie.year %></p>
+        </div>
+      <div class="font-color" class="col-6">
+        <h5>SYNOPSIS</h5>
         <p><%= @movie.synopsis %></p>
-        <%= link_to "Alquilar", new_movie_rental_path(@movie), class:"btn btn-primary"%>
+        <%= link_to "RENT THIS VHS", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
       </div>
     </div>
   </div>
