@@ -1,7 +1,7 @@
 
-<div class="container w-50 shadow bg-white mt-5 p-3">
+<div class="container w-150 mt-5 p-5">
   <div class="card-product">
-    <img src="<%= cl_image_path @movie.poster_url.key %>" />
+    <img  src="<%= cl_image_path @movie.poster_url.key %>" />
     <div class="card-product-infos">
 
       <%= simple_form_for [@movie, @rental] do |f| %>
