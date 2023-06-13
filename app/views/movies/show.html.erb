@@ -2,16 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <h1><%= @movie.title %></h1>
-        <h1><%= @movie.price %></h4>
-        <h1><%= @movie.director %></h4>
+        <h2><%= @movie.title %></h2>
+        <h6><%= @movie.director %></h6>
+        <h6><%= @movie.price %></h6>
       </div>
       <div class="col-4">
-        <h1><%= @movie.genre %></h4>
-        <h1><%= @movie.year %></h4>
+        <h6><%= @movie.genre %></h6>
+        <h6><%= @movie.year %></h6>
       </div>
       <div class="col-4">
-        <h1><%= @movie.synopsis %></h4>
+        <p><%= @movie.synopsis %></p>
         <%= link_to "Alquilar", new_movie_rental_path(@movie), class:"btn btn-primary"%>
       </div>
     </div>
