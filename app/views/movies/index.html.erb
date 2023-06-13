@@ -1,21 +1,23 @@
-<div class = "container mt-4">
+<div class = "container mt-4 ">
+
   <div class = "d-flex">
-    <div class = "col-6">
-      <h3>Movies</h3>
-      <%= link_to "Create Your Rental", new_movie_path(@movie), class:"btn btn-primary"%>
-    </div>
-      <div class="col-6 text-end">
+    <div class = "col-md-6 offset-md-3 mt-5" >
+      <hr style="border-top: 1px solid #ccc;">
+      <h3>BROWSE VHS FOR RENT OR RENT YOUR OWN</h3>
+      <p> Lovers of the past: Find films you didn’t know you were looking for.</p>
+      </div>
+      <div class="col-md-6 offset-md-3">
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-start mt-5">
     <div class="col-sm-8 my-3">
       <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
-              placeholder: "Search a movie!"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+              class: "form-control-sm ",
+              placeholder: "Search a VHS!" %>
+        <%= submit_tag "Search", name: "", class:"btn btn-primary btn-sm" %>
+        <%= link_to "Create VHS rental", new_movie_path(@movie), class:"btn btn-primary btn-sm mx-3"%>
       <% end %>
     </div>
   </div>
@@ -31,19 +33,25 @@
               <% else %>
                 <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
               <% end %>
+              <div class="container pt-5">
                 <div class="d-flex flex-column h-100 text-white">
-                  <div class="align-self-center m-auto">
-                    <h2 class=""><%= movie.title%></h2>
+                  <div class="align-self-right">
+                    <h5 class="strong"><%= movie.title.upcase%></h5>
                   </div>
-                  <div class="align-self-center">
-                    <h3 class=""><%= movie.year %></h3>
+                  <div class="align-self-right">
+                    <h6 class=""><%= movie.director %></h6>
+                  </div>
+                  <div class="align-self-right">
+                    <h6 class=""><%= movie.year %></h6>
+
                   </div>
                 </div>
+              </div>
                 <div class="avatar-container position-absolute bottom-0 end-0">
                   <% if movie.user && movie.user.avatar.attached?%>
                     <%= image_tag movie.user.avatar, class:"avatar" %>
                   <% else %>
-                    <%= image_tag "sinimagen.jpg", class:"avatar" %>
+                    <%= image_tag "sinimagen.png", class:"avatar" %>
                   <% end %>
                 </div>
               </div>
@@ -55,13 +63,18 @@
               <% else %>
                 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
               <% end %>
+              <div class="container pt-5">
               <div class="d-flex flex-column h-100">
-                <div class="align-self-center m-auto">
-                  <h2 class=""><%= movie.title%></h2>
+                <div class="align-self-right">
+                  <h5 class="strong"><%= movie.title.upcase%></h5>
                 </div>
-                <div class="align-self-center">
-                  <h3 class=""><%= movie.year %></h3>
+                <div class="align-self-right">
+                <h6 class=""><%= movie.director %></h6>
                 </div>
+                <div class="align-self-right">
+                  <h6 class=""><%= movie.year %></h6>
+                </div>
+              </div>
               </div>
             </div>
           </div>
