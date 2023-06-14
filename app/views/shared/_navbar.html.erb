@@ -27,6 +27,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "My rentals", user_path(current_user.id), class: "dropdown-item" %>
+              <%= link_to "My Movies", user_my_movies_path(current_user.id), class: "dropdown-item" %>
               <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
