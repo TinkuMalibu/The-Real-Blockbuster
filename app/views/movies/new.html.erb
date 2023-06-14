@@ -10,7 +10,7 @@
     </div>
     <%= f.input :director %>
     <%= f.label :synopsis, "Synopsis", class:"mt-1" %>
-    <%= f.text_area :synopsis, rows: 5, cols: 40, style: "resize: none;" %>
+    <%= f.text_area :synopsis, rows: 5, class:"w-100", style: "resize: none;" %>
     <%= f.label :year, "YEAR", class:"mt-1" %>
     <%= f.select :year, options_for_select((1950..Time.zone.now.year).map { |year| year }, @movie.year), {}, class:'form-control' %>
     <%= f.label :Genres, "GENRES:", class:"mt-3" %>
