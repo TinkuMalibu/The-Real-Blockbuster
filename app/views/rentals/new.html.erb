@@ -9,6 +9,7 @@
 
         <%= f.input :rent_date, order: [:day, :month, :year], html5:true %>
         <%= f.input :return_date, order: [:day, :month, :year], html5:true  %>
+
         <%# <%= f.association :f.title %>
         <%= link_to 'Back', movie_path(@movie), class:"btn btn-warning mb-4" %>
         <%= f.submit class:'btn btn-primary mb-4'%>
