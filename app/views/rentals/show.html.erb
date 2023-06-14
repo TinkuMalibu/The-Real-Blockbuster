@@ -10,6 +10,8 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><h2>Rent Day: <%= @rental.rent_date %> </h2></li>
         <li class="list-group-item"><h2>Return Day: <%= @rental.return_date %> </h2></li>
+        <li class="list-group-item"><h2>Total price: $<%= @rental.days_rented * @rental.movie.price%>  </h2></li>
+
       </ul>
 
     </div>
