@@ -13,6 +13,13 @@ class RentalsController < ApplicationController
     @rental = Rental.new(params_rental)
     @rental.movie = @movie
     @rental.user = current_user
+
+    rent_date = Date.parse(params[:rental][:rent_date])
+    return_date = Date.parse(params[:rental][:return_date])
+    days_difference = (return_date - rent_date).to_i
+
+    @rental.days_rented = days_difference
+
     if @rental.save
       @rental.movie.update(available: false)
       redirect_to rental_path(@rental)
