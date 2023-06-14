@@ -10,7 +10,14 @@
       <div class="font-color" class="col-6">
         <h5>SYNOPSIS</h5>
         <p><%= @movie.synopsis %></p>
-        <%= link_to "RENT THIS VHS", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
+        <% if current_user %>
+          <% if current_user.id == @movie.user_id %>
+          <% else %>
+            <%= link_to "RENT else", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
+          <% end %>
+        <% else %>
+           <%= link_to "RENT else", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
+        <% end %>
       </div>
     </div>
   </div>
