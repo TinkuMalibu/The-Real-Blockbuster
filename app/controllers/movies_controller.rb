@@ -37,6 +37,20 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to movie_path(@movie)
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to movie_path, status: :see_other
+  end
+
 
   private
 
