@@ -5,6 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <h3><%= @user.address %></h3>
       <div class="container">
         <h1>My rentals</h1>
         <% @user.rentals.each do |rental| %>
