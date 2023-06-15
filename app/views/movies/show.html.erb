@@ -8,7 +8,7 @@
         <p>Year: <%= @movie.year %></p>
         </div>
       <div class="font-color" class="col-6">
-        <h5>SYNOPSIS</h5>
+        <h5>Synopsis</h5>
         <p><%= @movie.synopsis %></p>
         <% if current_user %>
           <% if current_user.id == @movie.user_id %>
