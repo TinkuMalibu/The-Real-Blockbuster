@@ -1,26 +1,29 @@
-<div class="container mt-5 p-3 w-50">
-<div class="mb-3">
-  <h3> Welcome Back to The Real BlockBuster!</h3>
-</div>
-<h5>Log in</h5>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-control" style="width: 300px" placeholder="Smaller input">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="container mt-5 p-3 w-100">
+  <div class="mb-3">
+    <h3 class="w-100">Welcome Back to The Real BlockBuster!</h3>
+    <hr>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class:"btn btn-success mt-3" %>
+  <div class="d-flex justify-content-center">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+      <div class="form-control shadow" style="width: 300px" placeholder="Smaller input">
+      <h1 class="text-center">Login</h1>
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="row d-flex justify-content-center">
+          <div class="row form-actions">
+            <%= f.button :submit, "Log in", class:"btn btn-success mt-3" %>
+          </div>
+          <div class="row">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
 </div>
