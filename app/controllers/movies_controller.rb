@@ -3,6 +3,13 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
     if params[:query].present?
       @movies = @movies.where("title ILIKE ?", "%#{params[:query]}%")
     end
