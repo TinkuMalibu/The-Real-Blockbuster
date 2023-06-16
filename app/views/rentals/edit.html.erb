@@ -5,13 +5,13 @@
     <div class="card-product-infos">
 
       <%= simple_form_for [@movie, @rental] do |f| %>
-        <h1><%= @movie.title %></h1>
+        <h1><%= @rental.movie.title %></h1>
 
         <%= f.input :rent_date, order: [:day, :month, :year], html5:true %>
         <%= f.input :return_date, order: [:day, :month, :year], html5:true  %>
 
         <%# <%= f.association :f.title %>
-        <%= link_to 'Back', movie_path(@movie), class:"btn btn-warning mb-4" %>
+        <%= link_to 'Back', movie_path(@rental.movie), class:"btn btn-warning mb-4" %>
         <%= f.submit class:'btn btn-primary mb-4'%>
       <% end %>
       <% if @rental.errors.any? %>

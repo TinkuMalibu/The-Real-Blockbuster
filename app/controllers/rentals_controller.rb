@@ -40,7 +40,7 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     @rental.update(params_rental)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to user_path(current_user)
+    redirect_to rental_path(@rental)
   end
 
   def destroy
