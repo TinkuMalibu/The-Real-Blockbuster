@@ -17,9 +17,10 @@
                 <p class="card-text">To:<%= rental.return_date %></p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 <%= link_to "Edit Rental", edit_rental_path(rental), class:"btn btn-success lg" %>
-                <%= link_to user_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-solid fa-trash"></i>
-                <% end %>
+                <%= link_to "Delete",
+                   rental_path(rental),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
               </div>
             </div>
           </div>
