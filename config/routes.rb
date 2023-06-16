@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :movies do
     resources :rentals, only: %i[new create]
   end
-  resources :rentals, except: %i[edit]
+  resources :rentals
 
   devise_for :users
   resources :users, only: %i[show] do

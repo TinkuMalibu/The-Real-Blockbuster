@@ -33,6 +33,21 @@ class RentalsController < ApplicationController
   end
 
   def edit
+    @rental = Rental.find(params[:id])
+  end
+
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(params_rental)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to user_path(current_user)
+  end
+
+  def destroy
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to user_path, status: :see_other
   end
 
   private

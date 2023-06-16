@@ -1,3 +1,24 @@
-<h1>Rentals#edit</h1>
-<p>Find me in app/views/rentals/edit.html.erb</p>
 
+<div class="container w-150 mt-5 p-5">
+  <div class="card-product">
+    <img  src="<%= cl_image_path @rental.movie.poster_url.key %>" />
+    <div class="card-product-infos">
+
+      <%= simple_form_for [@movie, @rental] do |f| %>
+        <h1><%= @movie.title %></h1>
+
+        <%= f.input :rent_date, order: [:day, :month, :year], html5:true %>
+        <%= f.input :return_date, order: [:day, :month, :year], html5:true  %>
+
+        <%# <%= f.association :f.title %>
+        <%= link_to 'Back', movie_path(@movie), class:"btn btn-warning mb-4" %>
+        <%= f.submit class:'btn btn-primary mb-4'%>
+      <% end %>
+      <% if @rental.errors.any? %>
+        <small class="text-danger">
+          <%= @rental.errors.messages[:base].first %>
+        </small>
+      <% end %>
+    </div>
+  </div>
+</div>
