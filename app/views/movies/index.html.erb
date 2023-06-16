@@ -30,7 +30,7 @@
               <% if movie.poster_url.attached? %>
                 <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path movie.poster_url.key %>)">
               <% else %>
-                <div class="hover-on" class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
+                <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'sinimagen.jpg' %>)">
               <% end %>
               <div class="container pt-5">
                 <div class="d-flex flex-column h-100 text-white">
