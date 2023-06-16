@@ -10,7 +10,7 @@ class RentalsController < ApplicationController
 
   def create
     @movie = Movie.find(params[:movie_id])
-    @rental = Rental.new(params_rental)
+    @rental = Rental.new(rental_params)
     @rental.movie = @movie
     @rental.user = current_user
 
@@ -33,11 +33,26 @@ class RentalsController < ApplicationController
   end
 
   def edit
+    @rental = Rental.find(params[:id])
+  end
+
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(rental_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to rental_path(@rental)
+  end
+
+  def destroy
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to user_path, status: :see_other
   end
 
   private
 
-  def params_rental
+  def rental_params
     params.require(:rental).permit(:return_date, :rent_date, :user_id, :movie_id)
   end
 end

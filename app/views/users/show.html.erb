@@ -1,15 +1,10 @@
-<h1>My profile</h1>
-<%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
-
-
-<div class="container">
+<div class="container w-50 bg-white mb-5 mt-5 p-4 shadow">
   <div class="row">
     <div class="col">
-      <h3><%= @user.address %></h3>
-      <div class="container">
-        <h1>My rentals</h1>
+      <h2>Rentals of <%= @user.first_name %></h2>
+        <h1 class="text-center">My rentals</h1>
         <% @user.rentals.each do |rental| %>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 m-auto" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="<%= cl_image_path rental.movie.poster_url.key %>" class="img-fluid rounded-start" alt="...">
@@ -21,14 +16,17 @@
                 <p class="card-text">From:<%= rental.rent_date %></p>
                 <p class="card-text">To:<%= rental.return_date %></p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <%= link_to "Edit Rental", edit_rental_path(rental), class:"btn btn-success lg" %>
+                <%= link_to "Delete",
+                   rental_path(rental),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
               </div>
             </div>
           </div>
         </div>
         <% end %>
-      </div>
+        <%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
     </div>
-    <div class="col">
   </div>
 </div>
-<%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
