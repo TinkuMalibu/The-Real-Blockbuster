@@ -1,5 +1,5 @@
 
-<div class="container w-150 mt-5 p-5">
+<div class="container w-100 mt-5 p-5">
   <div class="card-product">
     <img  src="<%= cl_image_path @rental.movie.poster_url.key %>" />
     <div class="card-product-infos">
@@ -11,7 +11,7 @@
         <%= f.input :return_date, order: [:day, :month, :year], html5:true  %>
 
         <%# <%= f.association :f.title %>
-        <%= link_to 'Back', movie_path(@rental.movie), class:"btn btn-warning mb-4" %>
+        <%= link_to 'Back', user_path(current_user.id), class:"btn btn-warning mb-4" %>
         <%= f.submit class:'btn btn-primary mb-4'%>
       <% end %>
       <% if @rental.errors.any? %>
