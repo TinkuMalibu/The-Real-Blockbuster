@@ -18,6 +18,9 @@
           </div>
           <% end %>
         <% else %>
+      <div class= "d-flex align-items-center justify-content-center">
+      <%= link_to "RENT THIS MOVIE", new_movie_rental_path(@movie), class:"btn btn-success lg p-4"%>
+      </div>
       <% end %>
       </div>
     </div>
