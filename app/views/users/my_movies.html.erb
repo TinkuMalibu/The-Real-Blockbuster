@@ -1,5 +1,5 @@
 <div class="container w-50 bg-white mb-5 mt-5 p-4 shadow">
-  <h1 class="text-center">My movies</h1>
+  <h1 class="text-center">My published movies</h1>
     <% Movie.where(user_id: current_user.id).each do |movie| %>
     <div class="card mb-3 m-auto" style="max-width: 540px;">
       <div class="row g-0">
