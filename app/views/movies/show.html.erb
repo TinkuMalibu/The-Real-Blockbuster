@@ -13,10 +13,10 @@
         <% if current_user %>
           <% if current_user.id == @movie.user_id %>
           <% else %>
-            <%= link_to "RENT else", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
+            <%= link_to "RENT THIS MOVIE", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
           <% end %>
         <% else %>
-           <%= link_to "RENT else", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
+           <%= link_to "RENT THIS MOVIE", new_movie_rental_path(@movie), class:"btn btn-success lg"%>
         <% end %>
       </div>
     </div>
