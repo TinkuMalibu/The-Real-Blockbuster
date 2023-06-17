@@ -1,10 +1,11 @@
 <div class="container w-50 bg-white mb-5 mt-5 p-4 shadow">
   <div class="row">
     <div class="col">
-      <h2>Rentals of <%= @user.first_name %></h2>
-        <h1 class="text-center">My movies rentals</h1>
+      <%# <h2>Rentals of <%= @user.first_name %></h2>
+        <h1 class="text-left">My movie rentals</h1>
+        <p class="text-left">Here you can see the VHS's you rented from other users. Enjoy!</p>
         <% @user.rentals.each do |rental| %>
-        <div class="card mb-3 m-auto" style="max-width: 540px;">
+        <div class="card mb-3 m-auto" style="max-width: 800px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="<%= cl_image_path rental.movie.poster_url.key %>" class="img-fluid rounded-start" alt="...">
@@ -12,21 +13,25 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title"><%= rental.movie.title %></h5>
+                <p>Directed by: <%= rental.movie.director %></p>
                 <p class="card-text">Cost: $<%= rental.movie.price %></p>
                 <p class="card-text">From: <%= rental.rent_date.strftime("%d/%m/%y")%></p>
                 <p class="card-text">To: <%= rental.return_date.strftime("%d/%m/%y") %></p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <div>
+                <%= link_to 'Back', movies_path, class:'btn btn-primary mx-1'%>
                 <%= link_to "Edit Rental", edit_rental_path(rental), class:"btn btn-success lg" %>
                 <%= link_to "Delete",
-                   rental_path(rental),
+                rental_path(rental),
                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
                 %>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <% end %>
-        <%= link_to 'Back to movies', movies_path, class:'btn btn-primary mb-4 '%>
+
     </div>
   </div>
 </div>
