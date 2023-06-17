@@ -19,7 +19,6 @@ class RentalsController < ApplicationController
     days_difference = (return_date - rent_date).to_i
 
     @rental.days_rented = days_difference
-
     if @rental.save
       @rental.movie.update(available: false)
       redirect_to rental_path(@rental)

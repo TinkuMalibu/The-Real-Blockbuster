@@ -53,23 +53,23 @@ movie7.save!
 puts "peliculas creadas"
 puts "rentals"
 
-rental1 = Rental.new(movie_id: movie1.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id)
+rental1 = Rental.new(movie_id: movie1.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id, days_rented: 3)
 rental1.save!
-rental2 = Rental.new(movie_id: movie2.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id)
+rental2 = Rental.new(movie_id: movie2.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie3.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario1.id)
+rental2 = Rental.new(movie_id: movie3.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario1.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie4.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario1.id)
+rental2 = Rental.new(movie_id: movie4.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario1.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie5.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id)
+rental2 = Rental.new(movie_id: movie5.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie6.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id)
+rental2 = Rental.new(movie_id: movie6.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie7.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario3.id)
+rental2 = Rental.new(movie_id: movie7.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario3.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie2.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario3.id)
+rental2 = Rental.new(movie_id: movie2.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario3.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie5.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id)
+rental2 = Rental.new(movie_id: movie5.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario4.id, days_rented: 3)
 rental2.save
-rental2 = Rental.new(movie_id: movie1.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id)
+rental2 = Rental.new(movie_id: movie1.id, rent_date:"2023-7-17", return_date:"2023-7-20", user_id: usuario2.id, days_rented: 3)
 rental2.save
