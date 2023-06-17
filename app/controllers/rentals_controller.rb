@@ -45,6 +45,9 @@ class RentalsController < ApplicationController
 
   def destroy
     @rental = Rental.find(params[:id])
+    movie = Movie.find(@rental.movie_id)
+    movie.available = true
+    movie.save!
     @rental.destroy
     # No need for app/views/restaurants/destroy.html.erb
     redirect_to user_path, status: :see_other
