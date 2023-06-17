@@ -18,14 +18,17 @@
                 <p class="card-text">From: <%= rental.rent_date.strftime("%d/%m/%y")%></p>
                 <p class="card-text">To: <%= rental.return_date.strftime("%d/%m/%y") %></p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                <div>
-                <%= link_to 'Back', movies_path, class:'btn btn-primary mx-1'%>
-                <%= link_to "Edit Rental", edit_rental_path(rental), class:"btn btn-success lg" %>
-                <%= link_to "Delete",
-                rental_path(rental),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
-                </div>
+                <% if current_user %>
+                  <% @user.rentals.each do |rental| %>
+                    <% if current_user.id == rental.user_id %>
+                      <%= link_to "Edit Rental", edit_rental_path(rental), class:"btn btn-success lg" %>
+                      <%= link_to "Delete",
+                        rental_path(rental),
+                        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                      %>
+                    <% end %>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
