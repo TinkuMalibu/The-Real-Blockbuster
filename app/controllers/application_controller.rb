@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[firstname lastname address phone_number avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name lastname address phone_number avatar])
 
   def after_sign_in_path_for(resource)
     if (request.referer.include?("peliculas=ok") == true)
@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
     end
   end
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[firstname lastname address phone_number avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name lastname address phone_number avatar])
   end
 end
