@@ -1,11 +1,12 @@
 
-<div class="container w-150 mt-5 p-5">
-  <div class="card-product">
+<div class="container w-150 mt-5 pt-5">
+  <div class="card-product m-5">
     <img  src="<%= cl_image_path @movie.poster_url.key %>" />
     <div class="card-product-infos">
 
       <%= simple_form_for [@movie, @rental] do |f| %>
         <h1><%= @movie.title %></h1>
+        
 
         <%= f.input :rent_date, order: [:day, :month, :year], html5:true %>
         <%= f.input :return_date, order: [:day, :month, :year], html5:true  %>
